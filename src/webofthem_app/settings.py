@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webalbum',
+    'webchat',
+    'webcomment',
+    'weblike',
+    'webmessage',
+    'webphoto',
+    'webpost',
+    'webuser',
 ]
 
 MIDDLEWARE = [
