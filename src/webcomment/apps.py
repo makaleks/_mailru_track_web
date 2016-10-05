@@ -5,3 +5,5 @@ from django.apps import AppConfig
 
 class WebcommentConfig(AppConfig):
     name = 'webcomment'
+    def ready(self):
+        import signals

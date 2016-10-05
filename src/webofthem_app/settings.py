@@ -37,14 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webalbum',
-    'webchat',
+    'webuser',
+    'webbelonger',
+    'webrelation',
+    'webinteractive',
     'webcomment',
     'weblike',
-    'webmessage',
+    'webalbum',
     'webphoto',
+    'webchat',
+    'webmessage',
+    'webfeed',
     'webpost',
-    'webuser',
+    'webevent',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +149,12 @@ MEDIA_ROOT='/home/makaleks/dev/track/web/webofthem/media/'
 MEDIA_URL='/media/'
 #ADMIN_MEDIA_PREFIX='/home/makaleks/dev/track/web/webofthem/media'
 STATICFILES_DIRS=('/home/makaleks/dev/track/web/webofthem/src/static/',)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser'
+    ],
+    'PAGE_SIZE': 10
+}

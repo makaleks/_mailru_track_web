@@ -5,3 +5,5 @@ from django.apps import AppConfig
 
 class WebalbumConfig(AppConfig):
     name = 'webalbum'
+    def ready(self):
+        import signals
