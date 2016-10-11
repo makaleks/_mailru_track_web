@@ -1,13 +1,14 @@
-from django.conf.urls import url, include
-from django.contrib.auth.models import User
-from rest_framework import serializers 
+from django.contrib.auth.models import User, Group
+from rest_framework import serializers
 
-class UserSerializer(serializers.Serializer):
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Group
+        fields = ('url', 'name')
+
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email')
-
-
-# Routers provide an easy way of automatically determining the URL conf.
-router.register(r'users', UserViewSet)
-
+        lookup_field = 'username'
+        fields = ('url', 'username', 'email', 'groups')

@@ -37,20 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webuser',
-    'webbelonger',
-    'webrelation',
-    'webinteractive',
-    'webcomment',
-    'weblike',
-    'webalbum',
-    'webphoto',
-    'webchat',
-    'webmessage',
-    'webfeed',
-    'webpost',
-    'webevent',
     'rest_framework',
+    'social.apps.django_app.default',
+    'oauth2_provider',
+    'webuser',
+    #'webbelonger',
+    #'webrelation',
+    #'webinteractive',
+    #'webcomment',
+    #'weblike',
+    #'webalbum',
+    #'webphoto',
+    #'webchat',
+    #'webmessage',
+    #'webfeed',
+    #'webpost',
+    #'webevent',
 ]
 
 MIDDLEWARE = [
@@ -151,10 +153,37 @@ MEDIA_URL='/media/'
 STATICFILES_DIRS=('/home/makaleks/dev/track/web/webofthem/src/static/',)
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAdminUser'
-    ],
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
 }
+"""
+AUTHENTICATION_BACKENDS = (
+        'social.backends.vk.VKOAuth2',
+        'social.backends.facebook.FacebookOAuth2',
+)
+
+SOCIAL_AUTH_PIPELINE = (
+        'social.pipeline.social_auth.social_details',
+        'social.pipeline.social_auth.social_uid',
+        'social.pipeline.social_auth.auth_allowed',
+        'social.pipeline.social_auth.social_user',
+        'social.pipeline.user.get_username',
+        'social.pipeline.social_auth.associate_by_email',
+        'users.models.create_user_social',
+        'social.pipeline.social_auth.associate_user',
+        'social.pipeline.social_auth.load_extra_data',
+        'social.pipeline.user.user_details'
+)
+
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', ]
+SOCIAL_AUTH_VK_OAUTH2_EXTRA_DATA = ['email', ]
+SOCIAL_AUTH_VK_OAUTH2_KEY = ''
+SOCIAL_AUTH_VK_OAUTH2_SECRET = ''
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', ]
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['email', ]
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
+
+SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
+SOCIAL_AUTH_SANITIZE_REDIRECTS = False#"""
