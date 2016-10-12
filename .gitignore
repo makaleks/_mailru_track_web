@@ -3,3 +3,5 @@
 *.swo
 *~
 env/*
+src/manage.py
+src/webofthem_app/settings.py
