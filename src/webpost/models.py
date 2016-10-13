@@ -9,10 +9,10 @@ from webinteractive.models import Interactive
 # Create your models here
 
 class Post(Interactive):
-    text = models.TextField
+    text = models.TextField(default="")
     feed = models.ForeignKey('webfeed.Feed',  related_name = 'posts')
     def __init__(self):
-        super().__init__('post')
+        super(Post, self).__init__('post')
     def __unicode__(self):
         return "post_" + str(self.pk)
     class Meta:

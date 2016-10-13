@@ -157,6 +157,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+#"""open
 AUTHENTICATION_BACKENDS = (
         'social.backends.vk.VKOAuth2',
         'social.backends.facebook.FacebookOAuth2',
@@ -174,7 +175,7 @@ SOCIAL_AUTH_PIPELINE = (
         'social.pipeline.social_auth.load_extra_data',
         'social.pipeline.user.user_details'
 )
-#"""open
+
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', ]
 SOCIAL_AUTH_VK_OAUTH2_EXTRA_DATA = ['email', ]
 SOCIAL_AUTH_VK_OAUTH2_KEY = ''
@@ -187,4 +188,4 @@ SOCIAL_AUTH_FACEBOOK_SECRET = ''
 
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 SOCIAL_AUTH_SANITIZE_REDIRECTS = False
-#"""close
+#close"""

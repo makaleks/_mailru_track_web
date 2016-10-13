@@ -22,7 +22,7 @@ router = routers.DefaultRouter()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^social/', include('social.apps.django_app.urls', namespace='social')),
+    #url(r'^social/', include('social.apps.django_app.urls', namespace='social')),
     #url(r'^o/', include('itauth.urls', namespace='oauth2_provider')),
     url(r'^rest/', include('webofthem_app.urls_collect'))
     #url(r'^rest/', include('webuser.urls')),
