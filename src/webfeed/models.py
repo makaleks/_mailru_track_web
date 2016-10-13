@@ -8,7 +8,7 @@ from webbelonger.models import Belonger
 
 class Feed(Belonger):
     def __init__(self):
-        super().__init__('feed')
+        super(Feed, self).__init__('feed')
     def __unicode__(self):
         return "feed_" + str(self.create_date)
     class Meta:

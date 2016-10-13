@@ -161,6 +161,7 @@ REST_FRAMEWORK = {
 AUTHENTICATION_BACKENDS = (
         'social.backends.vk.VKOAuth2',
         'social.backends.facebook.FacebookOAuth2',
+        'django.contrib.auth.backends.ModelBackend'
 )
 
 SOCIAL_AUTH_PIPELINE = (
@@ -178,8 +179,8 @@ SOCIAL_AUTH_PIPELINE = (
 
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', ]
 SOCIAL_AUTH_VK_OAUTH2_EXTRA_DATA = ['email', ]
-SOCIAL_AUTH_VK_OAUTH2_KEY = ''
-SOCIAL_AUTH_VK_OAUTH2_SECRET = ''
+SOCIAL_AUTH_VK_OAUTH2_KEY = '5666965'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'KZaWgO0oAasup1Jpe3TO'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', ]
 SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['email', ]
