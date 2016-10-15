@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from webbelonger.views import BelongerViewSet
 
-# Create your views here.
+from serializers import LikeSerializer
+from models import Like
+
+
+class LikeViewSet(BelongerViewSet):
+    queryset = Like.objects.all()
+    serializer_class = LikeSerializer

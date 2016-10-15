@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 from django.db import models
 from webbelonger.models import BelongerWithName
 
-# Create your models here.
 
 class Album(BelongerWithName):
     def __unicode__(self):

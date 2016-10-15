@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from webbelonger.views import BelongerViewSet
+
+from models import Interactive
+from serializers import InteractiveSerializer
+
+
+class InteractiveViewSet(BelongerViewSet):
+    pass

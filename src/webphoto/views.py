@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from webinteractive.views import InteractiveViewSet
 
-# Create your views here.
+from serializers import PhotoSerializer
+from models import Photo
+
+
+class PhotoViewSet(InteractiveViewSet):
+    queryset = Photo.objects.all()
+    serializer_class = PhotoSerializer

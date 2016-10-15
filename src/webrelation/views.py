@@ -1,8 +1,9 @@
-from models import Friendship
-from rest_framework import viewsets
-from serializers import FriendshipSerializer
+from webbelonger.views import BelongerViewSet
 
-# ViewSets define the view behavior.
-class FriendshipViewSet(viewsets.ModelViewSet):
+from serializers import FriendshipSerializer
+from models import Friendship
+
+
+class FriendshipViewSet(BelongerViewSet):
     queryset = Friendship.objects.all()
     serializer_class = FriendshipSerializer

@@ -1,6 +1,9 @@
-from django.contrib.auth.models import User
 from rest_framework import viewsets
-from serializers import UserSerializer
+from serializers import UserSerializer, WebuserSerializer
+
+from django.contrib.auth.models import User
+
+from models import Webuser
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -9,3 +12,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+
+class WebuserViewSet(viewsets.ModelViewSet):
+    queryset = Webuser.objects.all()
+    serializer_class = WebuserSerializer

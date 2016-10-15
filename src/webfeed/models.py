@@ -4,9 +4,8 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
-from webbelonger.models import Belonger
 
-# Create your models here.
+from webbelonger.models import Belonger
 
 # Root Feed if used to collect feed objects
 # Feed anchors refer to independent RootFeed
@@ -26,8 +25,10 @@ class Feed(models.Model):
     feed_id = models.PositiveIntegerField()
     feed_object = GenericForeignKey('feed_type', 'feed_id')
     create_date = models.DateField(auto_now_add = True)
+
     def __unicode__(self):
         return "feed_" + str(self.create_date)
+    
     class Meta:
         verbose_name = u"Лента"
         verbose_name_plural = u"Ленты"

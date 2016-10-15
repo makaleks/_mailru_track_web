@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from webbelonger.views import BelongerViewSet
 
-# Create your views here.
+from serializers import AlbumSerializer
+from models import Album
+
+
+class AlbumViewSet(BelongerViewSet):
+    queryset = Album.objects.all()
+    serializer_class = AlbumSerializer

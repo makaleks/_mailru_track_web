@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from webbelonger.views import BelongerViewSet
 
-# Create your views here.
+from serializers import MessageSerializer
+from models import Message
+
+
+class MessageViewSet(BelongerViewSet):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
