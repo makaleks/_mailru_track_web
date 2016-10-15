@@ -7,8 +7,6 @@ from webbelonger.models import BelongerWithName
 # Create your models here.
 
 class Chat(BelongerWithName):
-    def __init__(self):
-        super().__init__('chat')
     def __unicode__(self):
         return "chat_" + str(self.pk)
     class Meta:

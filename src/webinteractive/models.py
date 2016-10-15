@@ -28,15 +28,11 @@ class Interactive(Belonger):
     comments = GenericRelation(Comment,
                     content_type_field='content_type', 
                     object_id_field='content_id')
-    '''def __init__(self, related_postfix):
-        super(Interactive, self).__init__(related_postfix)'''
     class Meta:
         abstract = True
 
 class InteractiveWithName(Interactive):
     name = models.CharField(max_length = 64)
-    def __init__(self, related_postfix):
-        super().__init__(related_postfix)
     class Meta:
         abstract = True
 

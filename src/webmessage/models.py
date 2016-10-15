@@ -8,10 +8,8 @@ from webchat.models import Chat
 # Create your models here.
 
 class Message(Belonger):
-    text = models.TextField
+    text = models.TextField(default="")
     chat = models.ForeignKey(Chat, related_name = 'messages')
-    def __init__(self):
-        super().__init__('message')
     def __unicode__(self):
         return "message_" + str(self.create_date)
     class Meta:

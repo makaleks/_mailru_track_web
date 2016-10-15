@@ -12,8 +12,6 @@ class Like(Belonger):
     content_type = models.ForeignKey(ContentType)
     content_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'content_id')
-    def __init__(self):
-        super().__init__('like')
     def __unicode__(self):
         return "like_" + str(self.create_date) + "_by_" + self.profile.name.replace(" ", "_")
     class Meta:

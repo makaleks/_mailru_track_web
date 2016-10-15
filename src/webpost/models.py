@@ -10,8 +10,6 @@ from webinteractive.models import Interactive
 
 class Post(Interactive):
     text = models.TextField(default="")
-    '''def __init__(self):
-        super(Post, self).__init__('post')'''
     def __unicode__(self):
         return "post_" + str(self.pk)
     class Meta:

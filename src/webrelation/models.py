@@ -10,8 +10,6 @@ from webbelonger.models import Belonger
 # 'Owner will be reciever, because every one can get friendship, but groups can't start it'
 class Friendship(Belonger):
     user_from = models.ForeignKey('webuser.Webuser', related_name='friendship_recieve')
-    def __init__(self):
-        super().__init__('friendrecieve')
     def __unicode__(self):
         return "friendship_" + str(self.create_date)
     class Meta:

@@ -10,8 +10,6 @@ from webalbum.models import Album
 class Photo(InteractiveWithName):
     data = models.ImageField()
     album = models.ForeignKey('webalbum.Album', related_name = 'photos')
-    def __init__(self):
-        super().__init__('photo')
     def __unicode__(self):
         return "IMG_" + str(self.pk)
     class Meta:
