@@ -4,14 +4,14 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
-from webinteractive.models import Interactive
 
+from webinteractive.models import Interactive
 # Create your models here.
 
 class Comment(Interactive):
     text = models.TextField()
     
-    content_type = models.ForeignKey(ContentType)
+    content_type = models.ForeignKey(ContentType, related_name='content_type')
     content_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'content_id')
     def __unicode__(self):

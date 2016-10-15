@@ -13,7 +13,7 @@ class Like(Belonger):
     content_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'content_id')
     def __unicode__(self):
-        return "like_" + str(self.create_date) + "_by_" + self.profile.name.replace(" ", "_")
+        return "like_" + str(self.pk)
     class Meta:
         verbose_name = u"Коммент"
         verbose_name_plural = u"Комменты"

@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from webuser.models import Webuser
 from webbelonger.models import Belonger
 
 # Create your models here.
