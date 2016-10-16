@@ -1,7 +1,8 @@
-from rest_framework import serializers
+from webbelonger.serializers import BelongerSerializer
 from models import Album
 
 
-class AlbumSerializer(serializers.HyperlinkedModelSerializer):
+class AlbumSerializer(BelongerSerializer):
     class Meta:
         model = Album
+

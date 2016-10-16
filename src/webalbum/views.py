@@ -1,5 +1,4 @@
 from webbelonger.views import BelongerViewSet
-
 from serializers import AlbumSerializer
 from models import Album
 

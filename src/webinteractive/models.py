@@ -8,8 +8,8 @@ from webbelonger.models import Belonger
 
 
 class Interactive(Belonger):
-    num_comments = models.IntegerField(default = 0)
-    num_likes = models.IntegerField(default = 0)
+    num_comments = models.IntegerField(default = 0, blank = True)
+    num_likes = models.IntegerField(default = 0, blank = True)
     # In case of class import - circular import with Comment
     likes = GenericRelation('weblike.Like',
                 content_type_field='content_type',
