@@ -13,3 +13,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class WebuserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Webuser
+        fields = ('user', )

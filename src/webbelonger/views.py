@@ -11,8 +11,7 @@ from permissions import IsOwnerOrReadOnly
 # Belonger is Meta, so 'with_name' version will appear in the end serializers
 
 class BelongerViewSet(viewsets.ModelViewSet):
-    pass
-    #permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
     
     def perform_create(self, serializer):
         uprofile = Webuser.objects.get(user=self.request.user)
@@ -22,4 +21,7 @@ class BelongerViewSet(viewsets.ModelViewSet):
         if self.request.query_params.get('username'):
             qs = qs.filter(owner__user__username =
                     self.request.query_params.get('username'))
+        if self.request.query_params.get('create_date'):
+            qs = qs.filter(create_date =
+                    self.request.query_params.get('create_date'))
         return qs
