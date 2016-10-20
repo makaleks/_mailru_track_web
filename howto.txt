@@ -1,0 +1,29 @@
+- Create superuser
+    $ ./manage.py create superuser
+
+- Install all from requirements.txt
+    pip install -r /path/to/requirements.txt
+    
+- Run gunicorn
+    $ gunicorn --reload -b localhost:8080 webofthem_app.wsgi:application -w 4
+    
+- Admin panel
+    http://localhost/admin/
+
+- REST panel
+    http://localhost/api/
+
+- Filter by 'name' and 'create_date'
+    http://localhost/api/albums/?create_date=2016-10-16&username=makaleks
+
+- Register Vk OAuth application (we are clients)
+    https://vk.com/apps?act=manage
+
+- Call OAuth from Vk
+    http://localhost/social/login/vk-oauth2/
+    
+- Register Django OAuth application (we are providers) (see next)
+    http://localhost/o/applications/
+
+- Call our provider via service http://django-oauth-toolkit.herokuapp.com./consumer/
+    http://localhost/o/authorize/?state=random_state_string&response_type=code&client_id=l76FNWxIw3utcuilfk4VGBd0PFTVlZA6z2SZC7jp
