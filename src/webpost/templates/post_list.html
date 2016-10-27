@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+
+{% block content %}
+    {% for post in post_list %}
+        <div class="b-wall">
+            {{ post.text|linebreaks }}
+            <hr/>
+        </div>
+    {% endfor %}
+{% endblock %}

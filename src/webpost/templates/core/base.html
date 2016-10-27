@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Заголовок страницы</title>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js">
+    </script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">
+    </script>
+</head>
+
+<body>
+    <div>
+    {% block menu %}
+        {% if not user.is_authenticated %}
+            <p><a href="/social/login/vk-oauth2/">Sign in using VK</a></p>
+        {% else %}
+            <p>Hello, {{user.username }}</p>
+            <p><a href="/admin/logout/?next=/">Logout</a></p>
+        {% endif %}
+    {% endblock %}
+    </div>
+    <div>{% block content %}{% endblock %}</div>
+    <script type="text/babel" src="{% static "app.jsx" %}"></script>
+</body>
+</html>

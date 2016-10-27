@@ -9,6 +9,7 @@ class BelongerSerializer(serializers.HyperlinkedModelSerializer):
     #owner = serializers.ModelField(read_only = True)
     create_date =  serializers.ReadOnlyField()
     edit_date =  serializers.ReadOnlyField()
+    id = serializers.ReadOnlyField()
     class Meta:
         model = Belonger
         #fields = ('owner', 'create_date', 'edit_date')

@@ -1,7 +1,7 @@
-from rest_framework import serializers
+from webbelonger.serializers import BelongerSerializer
 from models import Post
 
 
-class PostSerializer(serializers.HyperlinkedModelSerializer):
+class PostSerializer(BelongerSerializer):
     class Meta:
         model = Post
