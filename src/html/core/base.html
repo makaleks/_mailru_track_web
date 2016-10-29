@@ -15,10 +15,11 @@
     <div>
     {% block menu %}
         {% if not user.is_authenticated %}
+            <p><a href="/login/?next=/posts">Sign in</a></p>
             <p><a href="/social/login/vk-oauth2/">Sign in using VK</a></p>
         {% else %}
             <p>Hello, {{user.username }}</p>
-            <p><a href="/admin/logout/?next=/">Logout</a></p>
+            <p><a href="/admin/logout/?next=/posts">Logout</a></p>
         {% endif %}
     {% endblock %}
     </div>

@@ -4,9 +4,9 @@ from models import Webuser
 
 #dispatch_uid="create_user_profile"
 
-def user_post_save(instance, ... created=False):
+def user_post_save(instance, created=False, **kwargs):
     if created:
-        webuser = Webuser(user = instance.pk)
+        webuser = Webuser(user = instance)
         webuser.save()
 
-post_save.connect(comment_post_save, User)
+post_save.connect(user_post_save, User)

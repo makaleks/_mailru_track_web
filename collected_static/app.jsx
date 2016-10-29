@@ -17,12 +17,11 @@ class Post extends React.Component {
             padding: '1em',
             //background: (this.props.is_published) ? '#FFF' : '#EFEFEF',
         }
-        console.log(this.props.id);
-
         return (
-                <p key={this.props.id} style={style} 
+                <p style={style} className="class_post" 
                     onClick={this.showContent.bind(this)}>
                     {(this.state.isOpen) ? this.props.text : this.props.text.slice(0, 50)}
+                    <a href={`/posts/${this.props.id}`}>See full</a>
                 </p>
         )
     }
@@ -31,6 +30,11 @@ class Post extends React.Component {
 class PostList extends React.Component {
     state = {
         objects: [],
+        text: '',
+    }
+
+    componentWillMount() {
+        this.fetchDataFromServer();
     }
 
     onSearch(content) {
@@ -63,7 +67,7 @@ class PostList extends React.Component {
                 <PostSearch 
                     onButtonClick={this.loadDataFromServer.bind(this)}
                     onSearch={this.onSearch.bind(this)}/>
-                {this.state.objects.map((item) => <Post {...item} />)} 
+                {this.state.objects.map((item) => <Post key={item.id} {...item} />)} 
             </div>
         )
     }

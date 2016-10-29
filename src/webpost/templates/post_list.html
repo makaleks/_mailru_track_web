@@ -2,10 +2,15 @@
 
 
 {% block content %}
-    {% for post in post_list %}
-        <div class="b-wall">
-            {{ post.text|linebreaks }}
-            <hr/>
-        </div>
-    {% endfor %}
+    <div class="b-wall">
+        {% for post in post_list %}
+            <div>
+                {{ post.text|linebreaks }}
+                <p>
+                    <a href="/posts/{{post.id}}">See full</a>
+                </p>
+                <hr/>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

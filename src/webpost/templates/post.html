@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+
+{% block content %}
+    <p>
+        {{ post.text }}
+    </p>
+    <p>Likes: {{ post.num_likes }}</p>
+    <p>Comments: {{ post.num_comments }}</p>
+
+{% endblock %}

@@ -14,8 +14,19 @@ from django.http import HttpResponse
 class PostViewSet(BelongerViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    def get_queryset(self):
+        qs = super(PostViewSet, self).get_queryset()
+        arg = self.request.query_params.get('text')
+        if arg:
+            qs = qs.filter(text__icontains = arg)
+        return qs
 
 def render_post_list(request):
     return render(request, 'post_list.html', {
             'post_list': Post.objects.all(),
+        })
+
+def render_post(request, pk):
+    return render(request, 'post.html', {
+            'post': Post.objects.get(id = pk),
         })

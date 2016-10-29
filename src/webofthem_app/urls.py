@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.contrib.auth.views import login, logout
 from django.contrib import admin
 
 
@@ -23,6 +24,9 @@ urlpatterns = [
     url(r'^social/', include('social.apps.django_app.urls', namespace='social')),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^api/', include('webofthem_app.urls_collect')),
+
+    url(r'^login/', login, {'template_name': 'core/login.html'}, name="login"),
+    url(r'^logout/', logout, {'template_name': 'core/logout.html'}, name="logout"),
 
     url(r'^posts/', include('webpost.urls'))
 ]

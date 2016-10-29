@@ -70,7 +70,7 @@ ROOT_URLCONF = 'webofthem_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR, 'html') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -189,4 +189,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = ''
 
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 SOCIAL_AUTH_SANITIZE_REDIRECTS = False
+
+LOGIN_REDIRECT_URL = '/posts/'
+LOGIN_URL = '/login/'
 #close"""
