@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'social.apps.django_app.default',
     'oauth2_provider',
+    'corsheaders',
     'webuser',
     'webbelonger',
     'webrelation',
@@ -55,6 +56,8 @@ INSTALLED_APPS = [
     #'webevent',
 ]
 
+OAUTH2_PROVIDER_APPLICATION_MODEL='oauth2_provider.Application'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,7 +66,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'webofthem_app.urls'
 
@@ -162,6 +168,15 @@ AUTHENTICATION_BACKENDS = (
         'social.backends.vk.VKOAuth2',
         'social.backends.facebook.FacebookOAuth2',
         'django.contrib.auth.backends.ModelBackend'
+)
+
+MIDDLEWARE_CLASSES = (
+    '...',
+    # If you use SessionAuthenticationMiddleware, be sure it appears before OAuth2TokenMiddleware.
+    # SessionAuthenticationMiddleware is NOT required for using django-oauth-toolkit.
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
+    '...',
 )
 
 SOCIAL_AUTH_PIPELINE = (

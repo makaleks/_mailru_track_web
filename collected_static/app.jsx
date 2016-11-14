@@ -12,15 +12,15 @@ class Post extends React.Component {
     }
 
     render () {
-        let style = {
+        /*let style = {
             border: '4px solid #CCC',
             padding: '1em',
             //background: (this.props.is_published) ? '#FFF' : '#EFEFEF',
-        }
+        }*/
         return (
-                <p style={style} className="class_post" 
+                <p /*style={style}*/ className="callout" 
                     onClick={this.showContent.bind(this)}>
-                    {(this.state.isOpen) ? this.props.text : this.props.text.slice(0, 50)}
+                    {(this.state.isOpen) ? this.props.text + '\n' : this.props.text.slice(0, 50) + '... '}
                     <a href={`/posts/${this.props.id}`}>See full</a>
                 </p>
         )

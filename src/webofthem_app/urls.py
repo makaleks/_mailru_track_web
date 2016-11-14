@@ -17,16 +17,23 @@ from django.conf.urls import url, include
 from django.contrib.auth.views import login, logout
 from django.contrib import admin
 
+from .views import ApiAccess
+
+from django.shortcuts import HttpResponseRedirect
+def redirect_to_post_list(request):
+    return HttpResponseRedirect('/posts/')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^social/', include('social.apps.django_app.urls', namespace='social')),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    url(r'^api/', include('webofthem_app.urls_collect')),
+    url(r'^api/hello', ApiAccess.as_view()),
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
 
     url(r'^login/', login, {'template_name': 'core/login.html'}, name="login"),
     url(r'^logout/', logout, {'template_name': 'core/logout.html'}, name="logout"),
 
+    url(r'^$', redirect_to_post_list),
     url(r'^posts/', include('webpost.urls'))
 ]

@@ -1,12 +1,12 @@
+# Install all from requirements.txt
+    pip install -r /path/to/requirements.txt
+    
+# Run gunicorn
+    $ gunicorn --reload -b localhost:8080 webofthem_app.wsgi:application -w 4
+    
 - Create superuser
     $ ./manage.py create superuser
 
-- Install all from requirements.txt
-    pip install -r /path/to/requirements.txt
-    
-- Run gunicorn
-    $ gunicorn --reload -b localhost:8080 webofthem_app.wsgi:application -w 4
-    
 - Admin panel
     http://localhost/admin/
 
@@ -23,7 +23,14 @@
     http://localhost/social/login/vk-oauth2/
     
 - Register Django OAuth application (we are providers) (see next)
+  !!! For mobile-client service, use "implicit" client type
     http://localhost/o/applications/
 
 - Call our provider via service http://django-oauth-toolkit.herokuapp.com./consumer/
-    http://localhost/o/authorize/?state=random_state_string&response_type=code&client_id=l76FNWxIw3utcuilfk4VGBd0PFTVlZA6z2SZC7jp
+    http://localhost/o/authorize/?state=random_state_string&response_type=code&client_id=_your_app_id_
+
+- Get access token for mobile ("implicit" client type for oauth-application)
+    http://localhost/o/authorize/?response_type=token&client_id=_your_app_id_
+
+- Get access token expiration datetime
+    $ curl -I -H "Authorization: Bearer _your_access_token_" http://localhost/api/hello
