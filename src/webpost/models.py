@@ -12,6 +12,7 @@ from webinteractive.models import Interactive
 
 class Post(Interactive):
     text = models.TextField(default="")
+    image = models.ImageField(blank=True, null=True)
 
     def __unicode__(self):
         return "post_" + str(self.pk)
