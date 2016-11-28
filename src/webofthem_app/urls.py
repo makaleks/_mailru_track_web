@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib.auth.views import login, logout
 from django.contrib import admin
+from django.conf import settings
 
 from .views import ApiAccess
 
@@ -35,5 +36,6 @@ urlpatterns = [
     url(r'^logout/', logout, {'template_name': 'core/logout.html'}, name="logout"),
 
     url(r'^$', redirect_to_post_list),
-    url(r'^posts/', include('webpost.urls'))
-]
+    url(r'^posts/', include('webpost.urls')),
+    url(r'^chats/', include('webchat.urls'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
