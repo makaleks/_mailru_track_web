@@ -1,11 +1,36 @@
+# Load database from backup, if WEBOFTHEM database is managed by 'webofthem_admin' user of MySQL (see/change webofthem_app/settings.py in DATABASES block)
+    $ ./mysql_helper.py webofthem_admin --restore
+
+# Software requirements
+    mysql       (any implementation - mariadb was used)
+    virtualenv  ("python2-virtualenv" on Arch)
+    rabbitnq    (for Celery)
+    centrifugo  (for websockets)
+    nginx       (optional)
+    
 # Install all from requirements.txt
     pip install -r /path/to/requirements.txt
     
-# Run gunicorn
+# Start all required systemd-daemons in a single command
+    $ ./start_daemons.py
+
+# Run server
+-- using ./manage.py
+    $ ./manage.py runserver localhost:8080
+-- or using gunicorn
     $ gunicorn --reload -b localhost:8080 webofthem_app.wsgi:application -w 4
+
+# Run centrifugo message server
+    $ centrifugo --config=config.json -p 8001 -admin -web --insecure
+
+# Run celery task queue manager
+    $ celery -A webofthem_app woeker --loglevel=info
     
-- Create superuser
+# Create superuser
     $ ./manage.py create superuser
+
+# Run tests using in-memory database
+    $ ./manage.py test --settings=webofthem_app.settings.test
 
 - Admin panel
     http://localhost/admin/
