@@ -1,0 +1,6 @@
+{
+  "secret": "f0f7f02d-a6c2-47b0-b38a-3d22384b50d3",
+  "admin_password": "111",
+  "admin_secret": "strong_secret_key_to_sign_authorization_token",
+  "anonymous": true
+}

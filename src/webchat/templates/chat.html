@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<script src="//cdn.jsdelivr.net/sockjs/1.0/sockjs.min.js" type="text/javascript"></script>
+<script src="{% static 'centrifuge.js' %}"></script>
+
+    <div class="b-wall">
+        <p>Chat name: {{ chat.name }}<p>
+        {% for message in chat.messages.all %}
+        <p>
+            # Owner: {{ message.owner.username }}<br>
+            {{ message.text }}
+        </p>
+        {% endfor %}
+    </div>
+
+<script type="text/babel" src="{% static 'app_chat.jsx' %}"></script>
+{% endblock %}
+

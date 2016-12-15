@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib.auth.views import login, logout
 from django.contrib import admin
 from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import ApiAccess
 
@@ -31,6 +32,7 @@ urlpatterns = [
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^api/hello', ApiAccess.as_view()),
     url(r'^api/', include('webofthem_app.urls_api_collect')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 
     url(r'^login/', login, {'template_name': 'core/login.html'}, name="login"),
     url(r'^logout/', logout, {'template_name': 'core/logout.html'}, name="logout"),
@@ -39,3 +41,9 @@ urlpatterns = [
     url(r'^posts/', include('webpost.urls')),
     url(r'^chats/', include('webchat.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+            url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]

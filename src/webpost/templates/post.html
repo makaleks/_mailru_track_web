@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load staticfiles %}
 
 
 {% block content %}
@@ -9,3 +10,5 @@
     <p>Comments: {{ post.num_comments }}</p>
 
 {% endblock %}
+
+<script type="text/babel" src="{% static 'app_postlist.jsx' %}"></script>

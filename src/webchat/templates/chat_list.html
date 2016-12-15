@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+
+
+{% block content %}
+    <div class="b-wall">
+        {% for post in post_list %}
+            <div>
+                {{ post.text|linebreaks }}
+                <p>
+                    <a href="/posts/{{post.id}}">See full</a>
+                </p>
+                <hr/>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

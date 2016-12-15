@@ -20,7 +20,7 @@ class Post extends React.Component {
         return (
                 <p /*style={style}*/ className="callout" 
                     onClick={this.showContent.bind(this)}>
-                    {(this.state.isOpen) ? this.props.text + '\n' : this.props.text.slice(0, 50) + '... '}
+                    {(this.state.isOpen) ? this.props.text + ' ' : this.props.text.slice(0, 50) + '... '}
                     <a href={`/posts/${this.props.id}`}>See full</a>
                 </p>
         )

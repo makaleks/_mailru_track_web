@@ -1,0 +1,979 @@
+2016-12-13 14:02:27,357 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22, in perform_create
+    uprofile = Webuser.objects.get(user=self.request.user)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1183, in build_filter
+    condition = lookup_class(lhs, value)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/related_lookups.py", line 100, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+2016-12-13 14:05:10,184 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22, in perform_create
+    uprofile = Webuser.objects.get(user=self.request.user)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1183, in build_filter
+    condition = lookup_class(lhs, value)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/related_lookups.py", line 100, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+2016-12-13 14:05:59,441 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22, in perform_create
+    uprofile = Webuser.objects.get(user=self.request.user)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1183, in build_filter
+    condition = lookup_class(lhs, value)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/related_lookups.py", line 100, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+2016-12-13 14:07:41,544 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request.user
+                       ^
+SyntaxError: invalid syntax
+2016-12-13 14:07:51,843 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request.user
+                       ^
+SyntaxError: invalid syntax
+2016-12-13 14:10:01,484 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request.user is None
+                               ^
+SyntaxError: invalid syntax
+2016-12-13 14:10:03,146 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request.user is None
+                               ^
+SyntaxError: invalid syntax
+2016-12-13 14:10:04,295 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request.user is None
+                               ^
+SyntaxError: invalid syntax
+2016-12-13 14:10:46,766 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request.user is None
+                               ^
+SyntaxError: invalid syntax
+2016-12-13 14:11:30,606 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request.user == None
+                               ^
+SyntaxError: invalid syntax
+2016-12-13 14:11:43,184 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self.request == None
+                          ^
+SyntaxError: invalid syntax
+2016-12-13 14:11:52,754 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if self == None
+                  ^
+SyntaxError: invalid syntax
+2016-12-13 14:12:03,178 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22
+    if None
+          ^
+SyntaxError: invalid syntax
+2016-12-13 14:12:51,274 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 24, in perform_create
+    elif uprofile is not None:
+UnboundLocalError: local variable 'uprofile' referenced before assignment
+2016-12-13 14:13:49,948 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 23, in perform_create
+    uprofile = Webuser.objects.get(user=self.request.user)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1183, in build_filter
+    condition = lookup_class(lhs, value)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/related_lookups.py", line 100, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+2016-12-13 14:14:18,043 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 23, in perform_create
+    uprofile = Webuser.objects.get(user=self.request.user)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1183, in build_filter
+    condition = lookup_class(lhs, value)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/related_lookups.py", line 100, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+2016-12-13 14:15:57,776 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 24, in perform_create
+    token = self.request.META.get('HTTP_AUTHORIZATION')
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: AccessToken matching query does not exist.
+2016-12-13 14:16:21,914 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 24, in perform_create
+    token = self.request.META.get('HTTP_AUTHORIZATION')
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: AccessToken matching query does not exist.
+2016-12-13 14:20:15,952 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 26
+    uprofile = Webuser.objects.get(user)
+           ^
+SyntaxError: invalid syntax
+2016-12-13 14:20:32,549 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 26
+    uprofile = Webuser.objects.get(user)
+           ^
+SyntaxError: invalid syntax
+2016-12-13 14:20:35,691 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 26
+    uprofile = Webuser.objects.get(user)
+           ^
+SyntaxError: invalid syntax
+2016-12-13 14:20:46,600 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 26
+    uprofile = Webuser.objects.get(user)
+           ^
+SyntaxError: invalid syntax
+2016-12-13 14:22:05,547 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 22, in perform_create
+    token = request.data.get('access_token')
+NameError: global name 'request' is not defined
+2016-12-13 14:22:25,731 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 27, in perform_create
+    uprofile = Webuser.objects.get(user=self.request.user)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 796, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/query.py", line 814, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1183, in build_filter
+    condition = lookup_class(lhs, value)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/lookups.py", line 19, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/related_lookups.py", line 100, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 946, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+2016-12-13 14:27:13,620 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 270, in resolve
+    for pattern in self.url_patterns:
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 313, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/urls/resolvers.py", line 306, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls.py", line 34, in <module>
+    url(r'^api/', include('webofthem_app.urls_api_collect')),
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/makaleks/dev/track/web/webofthem/src/webofthem_app/urls_api_collect.py", line 5, in <module>
+    from webalbum.views import AlbumViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webalbum/views.py", line 1, in <module>
+    from webbelonger.views import BelongerViewSet
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 30
+    logger.debug('Hello!')
+         ^
+IndentationError: expected an indented block
+2016-12-13 14:27:52,691 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 24, in perform_create
+    user = self.request.backend.do_auth(request.GET.get('access_token'))
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/request.py", line 382, in __getattribute__
+    six.reraise(info[0], info[1], info[2].tb_next)
+  File "<string>", line 2, in reraise
+AttributeError: 'Request' object has no attribute 'backend'
+2016-12-13 14:31:21,296 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 25, in perform_create
+    user = request.auth
+NameError: global name 'request' is not defined
+2016-12-13 14:31:35,141 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 27, in perform_create
+    user = token.user
+AttributeError: 'str' object has no attribute 'user'
+2016-12-13 14:34:39,277 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 27, in perform_create
+    user = Token.objects.get(key=token).user
+NameError: global name 'Token' is not defined
+2016-12-13 14:35:10,557 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 28, in perform_create
+    user = Token.objects.get(key=token).user
+AttributeError: type object 'Token' has no attribute 'objects'
+2016-12-13 14:35:25,878 ERROR django.request Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/viewsets.py", line 87, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 474, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 434, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/views.py", line 471, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/makaleks/dev/track/web/webofthem/env/lib/python2.7/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/home/makaleks/dev/track/web/webofthem/src/webbelonger/views.py", line 28, in perform_create
+    user = Token.objects.get(key=token).user
+AttributeError: type object 'Token' has no attribute 'objects'

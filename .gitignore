@@ -3,6 +3,4 @@
 *.swo
 *~
 env/*
-src/*/migrations/*
-!src/*/migrations/__init__.py
 .idea/*

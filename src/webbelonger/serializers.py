@@ -2,7 +2,7 @@ from rest_framework import serializers
 from models import Belonger
 from webuser.serializers import WebuserSerializer
 
-
+# ModelSerializer
 class BelongerSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source="owner.user.id")
     #owner = WebuserSerializer()
@@ -10,6 +10,8 @@ class BelongerSerializer(serializers.HyperlinkedModelSerializer):
     create_date =  serializers.ReadOnlyField()
     edit_date =  serializers.ReadOnlyField()
     id = serializers.ReadOnlyField()
+
+    #owner = WebuserSerializer()
     class Meta:
         model = Belonger
         #fields = ('owner', 'create_date', 'edit_date')

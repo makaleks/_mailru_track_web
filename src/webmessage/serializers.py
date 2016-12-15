@@ -1,7 +1,7 @@
-from rest_framework import serializers
+from webbelonger.serializers import BelongerSerializer
 from models import Message
 
 
-class MessageSerializer(serializers.HyperlinkedModelSerializer):
+class MessageSerializer(BelongerSerializer):
     class Meta:
         model = Message
