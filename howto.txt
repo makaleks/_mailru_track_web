@@ -6,6 +6,7 @@
     virtualenv  ("python2-virtualenv" on Arch)
     rabbitnq    (for Celery)
     centrifugo  (for websockets)
+    memcached   (for cache)
     nginx       (optional)
     
 # Install all from requirements.txt
