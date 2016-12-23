@@ -11,12 +11,18 @@ from permissions import IsOwnerOrReadOnly
 from oauth2_provider.models import AccessToken, get_application_model
 from rest_framework.authtoken.models import Token
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 # Belonger is Meta, so 'with_name' version will appear in the end serializers
 
 class BelongerViewSet(viewsets.ModelViewSet):
     permission_classes = (IsOwnerOrReadOnly,)
     
     def perform_create(self, serializer):
+        logger.debug('Object author is filled from request info.')
         uprofile = Webuser.objects.get(user=self.request.user)
         serializer.save(owner = uprofile)
 

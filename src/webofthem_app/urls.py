@@ -18,12 +18,14 @@ from django.contrib.auth.views import login, logout
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.i18n import JavaScriptCatalog
+from django.conf.urls.i18n import i18n_patterns
 
 from .views import ApiAccess
 
 from django.shortcuts import HttpResponseRedirect
 def redirect_to_post_list(request):
-    return HttpResponseRedirect('/posts/')
+    return HttpResponseRedirect('en/posts/')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -38,9 +40,13 @@ urlpatterns = [
     url(r'^logout/', logout, {'template_name': 'core/logout.html'}, name="logout"),
 
     url(r'^$', redirect_to_post_list),
-    url(r'^posts/', include('webpost.urls')),
     url(r'^chats/', include('webchat.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns(
+    url(r'^posts/', include('webpost.urls')),
+    url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+)
 
 if settings.DEBUG:
     import debug_toolbar

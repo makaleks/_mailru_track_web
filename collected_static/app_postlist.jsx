@@ -103,10 +103,11 @@ class PostSearch extends React.Component {
 
 class Root extends React.Component {
     render() {
-        let name = (this.props.name) ? this.props.name : 'Dear User';
+        let name = (this.props.name) ? this.props.name : gettext('Dear User');
+        let result = gettext('Hello, ') + name;
         return (
             <div>
-                <h1>Hello, {name}!</h1>
+                <h1>{result}!</h1>
                 <PostList />
             </div>
         )

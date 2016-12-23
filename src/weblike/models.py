@@ -17,6 +17,6 @@ class Like(Belonger):
         return "like_" + str(self.pk)
     
     class Meta:
-        verbose_name = u"Коммент"
-        verbose_name_plural = u"Комменты"
+        verbose_name = u"Лайк"
+        verbose_name_plural = u"Лайки"
         ordering = ('-create_date', )

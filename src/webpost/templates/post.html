@@ -7,7 +7,7 @@
         {{ post.text }}
     </p>
     <p>Likes: {{ post.num_likes }}</p>
-    <p>Comments: {{ post.num_comments }}</p>
+    <p>Comments: {{ post.get_comments_count }}</p>
 
 {% endblock %}
 

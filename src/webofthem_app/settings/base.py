@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 Django settings for webofthem_app project.
 
@@ -9,23 +10,25 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from ConfigParser import ConfigParser
+config = ConfigParser()
+config.read(os.path.join(BASE_DIR, '../specials.conf'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^-_jicyl20r!u5gc&lmmi90=^i@u7$00oxr1i8wtags@q9lql9'
+SECRET_KEY = config.get('main', 'SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config.getboolean('main', 'DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config.get('main', 'ALLOWED_HOSTS').split(',')
 
 
 # Application definition
@@ -58,6 +61,13 @@ INSTALLED_APPS = [
     #'webevent',
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
 OAUTH2_PROVIDER_APPLICATION_MODEL='oauth2_provider.Application'
 
 #INTERNAL_IPS = '127.0.0.1',
@@ -67,11 +77,22 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+
+LANGUAGE_CODE = 'en'
+LANGUAGES = [
+    ('en', u'Английский'),
+    ('ru', u'Русский'),
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -96,6 +117,44 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'webofthem_app.wsgi.application'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'request_file': {
+                'class':'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'request.log'),
+                'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        'webbelonger.views': {
+            'handlers': ['request_file'],
+            'level': 'DEBUG',
+        },
+        'webinteractive.models': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
 
 #LOGGING = {
 #    'version': 1,
@@ -181,8 +240,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-22 17:49+0000\n"
+"POT-Creation-Date: 2016-12-22 18:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,22 +20,10 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: html/core/base.html:39
-msgid "Profile"
-msgstr "Профиль"
+#: static/app_postlist.jsx:106
+msgid "Dear User"
+msgstr "Дорогой Пользователь"
 
-#: html/core/base.html:40
-msgid "Messages"
-msgstr "Сообщения"
-
-#: html/core/base.html:41
-msgid "Groups"
-msgstr "Группы"
-
-#: html/core/base.html:42
-msgid "Photos"
-msgstr "Фото"
-
-#: webpost/models.py:15
-msgid "Text"
-msgstr "Текст"
+#: static/app_postlist.jsx:107
+msgid "Hello, "
+msgstr "Привет, "
