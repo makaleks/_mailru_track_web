@@ -4,3 +4,6 @@
 *~
 env/*
 .idea/*
+specials.conf
+*.log
+*.mo
